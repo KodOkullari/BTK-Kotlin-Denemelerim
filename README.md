@@ -1,2 +1,1 @@
-# C-HelloWorld
-C# Denemeleri
+# BTK Kotlin Denemeleri
