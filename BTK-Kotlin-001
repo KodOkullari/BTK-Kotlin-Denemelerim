@@ -1,0 +1,280 @@
+package com.example.kotlin_btk_001
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import java.security.KeyStore
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        //********Değişkenler*********
+
+        println("-*-*-*-*-*Merhaba Dünyalı*-*-*-*-") // yazacak
+
+        println("********Değişkenler*********") // yazacak
+
+        println("******** var *********")  // yazacak
+
+        println(5*10)   // 5 * 10 = 50 yazacak
+
+        var a = 10
+
+        var b = 4
+
+        var yas = a * b  // a = 10 b = 4
+
+        println(yas)  // yas = 10*4 = 40 yazacak
+
+        yas = 80 // yas'ın yeni değeri 80 oldu
+
+        println(yas)  // yas'ın yeni değeri olan 80 yazacak
+
+        yas = 60  // yas'în yeni değeri 60 oldu
+
+        println(yas/5*8)
+
+        // 60 / 5 * 8  işlem sırasına dikkat!! 60 / 5 = 12 * 8 = 96 yazacak
+
+        // değişkenler var ile tanımlanır.
+
+        // bir kere tanımlandıktan sonra değiştirilebilirler.
+
+        println("********Sabitler*********")  // yazacak
+
+        println("******** val *********")  // yazacak
+
+        val c=15    // sabitimiz olan  c = 15 oldu  // bidaha değiştiremeyeceğiz
+
+        println(c)  // c = 15  yazacak
+
+        val d=20
+
+        val e=5
+
+        println(d+e) //d = 20   e = 5  d+e = 25  yazacak
+
+        yas=b*e   // b = 4   e = 5
+
+        println(yas)  // 20  yazacak
+
+        // iki ve daha fazla kelimeli yazımların iki çeşit yazım tarzı var
+
+        // 1        camelCase  yasSonucu
+
+        //          * Kotlin'de camelCase kullanılıyor.
+
+        // 2        snake_case  yas_sonucu
+
+        val yasSonucu = yas  * e
+
+        println(yasSonucu) // yas = 20 , e = 5  ise yasSonucu = 20*5 = 100 yazacak
+
+        // e=40  dersek burada hata veriyor.
+        // düzeltmek için kırmızı lamba çıkıyor ve e'yi var yap diyor
+
+        println("********Değişken Tipleri*********")  // yazacak
+        println("******** integer *********")  // yazacak
+
+        //  https://kotlinlang.org/docs/basic-types.html#numbers
+        //
+        //
+        // Type	    Size(bits)	Min value	                        Max value
+
+        // Byte	    8	        -128	                            127
+        // Short	16	        -32768	                            32767
+        // Int	    32	        -2,147,483,648 (-2 31)	            2,147,483,647 (2 31- 1)
+        // Long	    64	        -9,223,372,036,854,775,808 (-2 63)  9,223,372,036,854,775,807 (2 63- 1)
+
+        // Byte, Short, Int ve Long birer class'dırlar.
+        // değişkenin üzerine tıkladığımızsa pop-up bize değişken tipini söyleyecek.
+
+        val one = 1 // Int
+        val threeBillion = 3000000000 // Long
+        val oneLong = 1L // Long
+        val oneByte: Byte = 1
+
+        var benimIntegerim : Int
+
+        // başlatma, değerini atama (Initializing, Initialization)
+
+        benimIntegerim = 2147483647
+
+        // örneğin,
+        // benimIntegerim = 2147483647  hatasız
+        // benimIntegerim = 2147483648  hatalı
+
+        benimIntegerim = 5
+
+        println(benimIntegerim/2 )
+
+        // Normalde 2,5 yazmlı ama 2 yazacak
+
+        // Çünkü benimIntegerim değişkeni tam sayı değişkenin sonucu da tam sayı olmalı
+
+        println("******** Long *********")  // yazacak
+
+        // var benimLong : Int = 100 // Buradaki Int ibaresini Long ile değiştirmemi isteyecek
+
+        // benimLong = 3000000000
+
+        // burada hata verir, neden çünkü benimLong değişkeni bir ineteger
+
+        var benimLong : Long = 100  // Ama artık Integer değişkeni Long değişkeni haline getirdik.
+
+        benimLong = 300000000000
+
+        // Görüldüğü gibi artık 2,147,483,647 'den büyük olmasına rağmen hata vermiyor.
+
+        println(benimLong)
+
+        println("******** Double ve Float *********")  // yazacak
+
+        //  Type	Size (bits)	    Significant bits	Exponent bits	Decimal digits
+        //  Float	32	            24	                8	            6-7
+        //  Double	64	            53	                11	            15-16
+
+        val pi = 3.14  // Otomatik olarak Double (64 bits) fonksiyon atadı
+
+        println(pi * 2)
+
+        // val floatPi : Float = 3.14  buarada 3.14'ün altını çizi hata verdi
+
+        // Çünkü Float'larda kendine özgü bir durum var.
+
+        // Float'larda sayının sonuna "f" yazmalıyız.
+
+        val floatPi : Float = 3.14f
+
+        println(floatPi * 2)
+
+        val yeniDouble = 5.0
+
+        println(yeniDouble / 2)  // Int olan 5'i 2'ye bölünce 2 yazmıştı.
+
+        // Görüldüğü gibi Double olan yeniDouble 'ı 2'ye bölünce 2.5 sonucunu verdi
+
+        println("******** String *********")  // yazacak
+
+        val benimString = "Benim Yeni Metnim"
+
+        println(benimString.length)
+
+        println(benimString)
+
+        // yeniDouble. // nıkta koyunca fonksiyonlara özellikler katıyor.
+
+        // her sınıfın farklı özellikleri var
+
+        // örneğin ...string.length bize stringin uzunluğunu verdi
+
+        var isim = "Mehmet"
+
+        var soyIsim = "Cebeci"
+
+        val tamIsim = isim + " " + soyIsim // aradaki " " bir boşluk için
+
+        // görüldüğü gibi stringlerde toplama işlemi bu şekilde oluyor.
+
+        println(tamIsim)
+
+        val rakamString : String
+
+        rakamString="10"
+
+        val yeniRakamString : String
+
+        yeniRakamString="20"
+
+        println(rakamString+yeniRakamString)
+
+        // bak burada 10+20=30 değil 10+20=1020 yaptı !!!
+
+        println("******** Boolean *********")  // yazacak
+
+        // Boolean en kolay veri tipi diyebiliriz.
+
+        // Çünkü ya yanlış-doğru  //  ya evet-hayır (yani True-False)
+
+        // değerlendirmesi yapar.
+
+        var benimBoolean=true
+
+        var seninBoolean=false
+
+        // bu değişkenleri birbiri arasında " = " ile değiştiremeyiz.
+
+        // Bazı programlarda sadece "=" kullanarak değişken tipini
+
+        // değiştirebiliyoruz. Örneğin Python'da
+
+        // ama bunu güvensiz bulanlar var. yeni tanımladığın
+
+        // değişken eski bir değişken ise değeri ve hatta tipi değişecektir.
+
+        // bu da bütün kodun çöp olmasına neden olabilir.
+
+        // örnek benimBoolean=10 (yani int değeri vermeye kalkarsannız
+
+        // hata alırsınız. Bu daha güvenli diyebiliriz.
+
+        benimBoolean=false
+
+        seninBoolean=true  // şeklinde değiştirebiliriz ama
+
+        println(benimBoolean)
+
+        println(seninBoolean)
+
+        //  <     ->    küçüktür
+        //  >     ->    büyüktür
+        //  ==    ->    eşittir
+        //  niye tek eşit değil çünkü tek eşit değer atamak içindir.
+        //  !=    ->    eşit değildir
+        //  <=    ->    küçük eşittir.
+        //  >=    ->    büyük eşittir
+        //  &&    ->    ve
+        //  ||    ->    veya  // boru...
+        //
+        //  bunlar kontrol elemanları
+        //
+        //  örneğin
+        //
+        println(3 < 5)
+        //  3, 5'ten küçüktür yazmak istedik
+        //  ama bu kontrolün sonucu Boolean'dır
+        //  ve true olarak değerlenecektir.
+        println(4!=4)
+        // 4 aslında 4 eşit olduğundan kontrol işleminin sonucu false verecek
+        // kontrolün sonucuna göre bir talimat verebiliriz.
+        // ya da || :) veya // bir alimatı kontrol ettirip
+        // uygulatabiliriz.
+
+        println("******** Veri Tipleri Dönüştürme ******")  // yazacak
+
+        // string'i int' e dnüştürebiliriz ancak mantıklı ise
+        // örneğin string olan "10" u int olan 10 'a dönüştürebiliriz
+        // ancak string olan "Mehmet" i integer'e dönüştüremeyiz:)))
+
+        println(benimIntegerim) // değeri 5 miş
+
+        println(benimLong) // değeri 300000000000 miş
+
+        // şimdi benimIntegerim değişkenini Long'a çevirelim.
+        // . (nokta) to yazarsak seçenekler popup olacak
+        // integere, double a, float'a vs.. çevirmek için kullanacağız.
+
+        var benimIntegerimCevirilen = benimIntegerim.toLong()
+
+        println(benimIntegerim)
+
+
+
+
+
+
+
+
+    }
+}
